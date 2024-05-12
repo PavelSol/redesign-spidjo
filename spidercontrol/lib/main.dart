@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Spider-robot',
       theme: ThemeData(
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Spider-robot controller'),
     );
   }
 }
@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
 @override
   void initState() {
     super.initState();
-     BluetoothConnection.toAddress("00:21:13:00:19:5C").then((_connection) {
+     /*BluetoothConnection.toAddress("00:21:13:00:19:5C").then((_connection) {
       print('Connected to the device');
       connection = _connection;
       setState(() {
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }).catchError((error) {
       print('Cannot connect, exception occured');
       print(error);
-    });
+    });*/
   }
 
   @override
@@ -93,12 +93,54 @@ class _MyHomePageState extends State<MyHomePage> {
   
   @override
   Widget build(BuildContext context) {
+     SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+    ]);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: 
+      body:SafeArea(child: 
+      Stack(
+        children:[ Row(
+          children: [
+            Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_left))],
+      ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_up)),
+          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_down))
+        ],
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_right))
+
+        ],
+      )
+
+          ],
+        )
+        // [Row(
+        //     children: [
+        //       ElevatedButton(onPressed: () {_sendMessage("w 4");}, child: Text("Button")),
+        //       ElevatedButton(onPressed: () {_sendMessage("text");}, child: Text("data")),
+        //       ElevatedButton(onPressed: () {_sendMessage("text");}, child: Text("data1"))
+        //     ],
+        //   ),
+          
+                   
+        
+      
+        ],
+      ))
+      
+      
+      
     );
   }
 
