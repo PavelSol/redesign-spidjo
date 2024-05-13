@@ -113,18 +113,18 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_left, size: 40,))],//кнопка влево
+        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_left, size: 60, color: Colors.blueGrey,))],//кнопка влево
       ),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_up, size: 40,)),//кнопка вверх
-          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_down, size: 40,))//кнопка вниз
+          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_up, size: 60,color: Colors.blueGrey,)),//кнопка вверх
+          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_down, size: 60,color: Colors.blueGrey,))//кнопка вниз
         ],
       ),
       Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_right, size: 40,))//кнопка вправо
+        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_right, size: 60,color: Colors.blueGrey,))//кнопка вправо
 
         ],
       )
@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         Row(
           children: [
-            Padding(padding: EdgeInsetsDirectional.fromSTEB(200, 0, 0, 0)),
+            Padding(padding: EdgeInsets.fromLTRB(250, 0, 0, 0)),
           Column(
             children: [
               Text("Скорость передвижения", style: TextStyle(fontSize: 20),),
@@ -162,7 +162,33 @@ class _MyHomePageState extends State<MyHomePage> {
                        child: const Text("x5", style: TextStyle(color: Colors.white))),//кнопка скорости х5
                 ],
               ),
+            Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
             Text("Расстояние до объекта", style: TextStyle(fontSize: 20),),
+            Row(
+              children: [
+                Text("расстояние", style: TextStyle(fontSize: 20),),
+                Text(" см", style: TextStyle(fontSize: 20),)
+              ],
+            ),
+            Row(children: [
+              Padding(padding: EdgeInsets.fromLTRB(0, 100, 0, 0)),
+              Column(
+              children: [
+              Padding(padding: EdgeInsets.fromLTRB(0, 0, 100, 0)),  
+              Text("MQ-9", style: TextStyle(fontSize: 20),),
+              Text("data", style: TextStyle(fontSize: 20),),
+              
+              ],
+            ),
+            Column(
+              children: [
+                Padding(padding: EdgeInsets.fromLTRB(120, 0, 0, 0)),
+                Text("MQ-135", style: TextStyle(fontSize: 20),),
+                Text("data", style: TextStyle(fontSize: 20),)
+              ],
+            )
+            ],)
+            
 
               
             ],
