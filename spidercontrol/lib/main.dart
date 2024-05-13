@@ -1,7 +1,9 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 
 void main() {
@@ -98,44 +100,78 @@ class _MyHomePageState extends State<MyHomePage> {
     ]);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        backgroundColor: Color.fromARGB(255, 120, 0, 209),
+        title: Text(widget.title, style: TextStyle(color: Colors.white),),
       ),
       body:SafeArea(child: 
       Stack(
-        children:[ Row(
+        children:[ 
+          Container(
+            color: Colors.grey,
+          ), 
+          Row(
           children: [
             Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_left))],
+        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_left, size: 40,))],//кнопка влево
       ),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_up)),
-          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_down))
+          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_up, size: 40,)),//кнопка вверх
+          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_down, size: 40,))//кнопка вниз
         ],
       ),
       Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_right))
+        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_right, size: 40,))//кнопка вправо
 
         ],
       )
 
           ],
-        )
-        // [Row(
-        //     children: [
-        //       ElevatedButton(onPressed: () {_sendMessage("w 4");}, child: Text("Button")),
-        //       ElevatedButton(onPressed: () {_sendMessage("text");}, child: Text("data")),
-        //       ElevatedButton(onPressed: () {_sendMessage("text");}, child: Text("data1"))
-        //     ],
-        //   ),
-          
-                   
+        ),
+        Row(
+          children: [
+            Padding(padding: EdgeInsetsDirectional.fromSTEB(200, 0, 0, 0)),
+          Column(
+            children: [
+              Text("Скорость передвижения", style: TextStyle(fontSize: 20),),
+              Row(
+                children: [
+              ElevatedButton
+                (onPressed: () {_sendMessage("text");},style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll<Color>(Colors.blueGrey),
+                        minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                      ),
+                       child: const Text("x1", style: TextStyle(color: Colors.white),)),//кнопка скорости х1
+            ElevatedButton
+          (onPressed: () {_sendMessage("text");},style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll<Color>(Colors.blueGrey),
+                        minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                      ),
+                       child: const Text("x2", style: TextStyle(color: Colors.white))),//кнопка скорости х2
+            ElevatedButton
+          (onPressed: () {_sendMessage("text");},style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll<Color>(Colors.blueGrey),
+                        minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                      ),
+                       child: const Text("x5", style: TextStyle(color: Colors.white))),//кнопка скорости х5
+                ],
+              ),
+            Text("Расстояние до объекта", style: TextStyle(fontSize: 20),),
+
+              
+            ],
+          ),  
         
-      
+         ]
+            
+        )
+           
         ],
       ))
       
