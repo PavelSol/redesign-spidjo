@@ -13,13 +13,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Spider-robot',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
         useMaterial3: true,
       ),
@@ -60,11 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
   bool get isConnected => (connection?.isConnected ?? false);
 
   bool isDisconnecting = false;
- 
-@override
+
+  @override
   void initState() {
     super.initState();
-     /*BluetoothConnection.toAddress("00:21:13:00:19:5C").then((_connection) {
+    /*BluetoothConnection.toAddress("00:21:13:00:19:5C").then((_connection) {
       print('Connected to the device');
       connection = _connection;
       setState(() {
@@ -92,121 +90,254 @@ class _MyHomePageState extends State<MyHomePage> {
   void dispose() {
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
-     SystemChrome.setPreferredOrientations([
+    SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
     ]);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 120, 0, 209),
-        title: Text(widget.title, style: TextStyle(color: Colors.white),),
-      ),
-      body:SafeArea(child: 
-      Stack(
-        children:[ 
-          Container(
-            color: Colors.grey,
-          ), 
-          Row(
-          children: [
-            Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_left, size: 60, color: Colors.blueGrey,))],//кнопка влево
-      ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_up, size: 60,color: Colors.blueGrey,)),//кнопка вверх
-          IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_down, size: 60,color: Colors.blueGrey,))//кнопка вниз
-        ],
-      ),
-      Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [IconButton(onPressed: () {_sendMessage("text");}, icon: Icon(Icons.arrow_circle_right, size: 60,color: Colors.blueGrey,))//кнопка вправо
-
-        ],
-      )
-
-          ],
+        appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 120, 0, 209),
+          title: Text(
+            widget.title,
+            style: TextStyle(color: Colors.white),
+          ),
         ),
-        Row(
+        body: SafeArea(
+            child: Stack(
           children: [
-            Padding(padding: EdgeInsets.fromLTRB(250, 0, 0, 0)),
-          Column(
-            children: [
-              Text("Скорость передвижения", style: TextStyle(fontSize: 20),),
-              Row(
-                children: [
-              ElevatedButton
-                (onPressed: () {_sendMessage("text");},style: const ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll<Color>(Colors.blueGrey),
-                        minimumSize: MaterialStatePropertyAll(Size(30, 50)),
-                      ),
-                       child: const Text("x1", style: TextStyle(color: Colors.white),)),//кнопка скорости х1
-            ElevatedButton
-          (onPressed: () {_sendMessage("text");},style: const ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll<Color>(Colors.blueGrey),
-                        minimumSize: MaterialStatePropertyAll(Size(30, 50)),
-                      ),
-                       child: const Text("x2", style: TextStyle(color: Colors.white))),//кнопка скорости х2
-            ElevatedButton
-          (onPressed: () {_sendMessage("text");},style: const ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll<Color>(Colors.blueGrey),
-                        minimumSize: MaterialStatePropertyAll(Size(30, 50)),
-                      ),
-                       child: const Text("x5", style: TextStyle(color: Colors.white))),//кнопка скорости х5
-                ],
-              ),
-            Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
-            Text("Расстояние до объекта", style: TextStyle(fontSize: 20),),
+            Container(
+              color: Colors.grey,
+            ),
             Row(
               children: [
-                Text("расстояние", style: TextStyle(fontSize: 20),),
-                Text(" см", style: TextStyle(fontSize: 20),)
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          _sendMessage("text");
+                        },
+                        icon: Icon(
+                          Icons.arrow_circle_left,
+                          size: 60,
+                          color: Colors.blueGrey,
+                        ))
+                  ], //кнопка влево
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          _sendMessage("text");
+                        },
+                        icon: Icon(
+                          Icons.arrow_circle_up,
+                          size: 60,
+                          color: Colors.blueGrey,
+                        )), //кнопка вверх
+                    IconButton(
+                        onPressed: () {
+                          _sendMessage("text");
+                        },
+                        icon: Icon(
+                          Icons.arrow_circle_down,
+                          size: 60,
+                          color: Colors.blueGrey,
+                        )) //кнопка вниз
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          _sendMessage("text");
+                        },
+                        icon: Icon(
+                          Icons.arrow_circle_right,
+                          size: 60,
+                          color: Colors.blueGrey,
+                        )) //кнопка вправо
+                  ],
+                )
               ],
             ),
             Row(children: [
-              Padding(padding: EdgeInsets.fromLTRB(0, 100, 0, 0)),
+              Padding(padding: EdgeInsets.fromLTRB(250, 0, 0, 0)),
               Column(
-              children: [
-              Padding(padding: EdgeInsets.fromLTRB(0, 0, 100, 0)),  
-              Text("MQ-9", style: TextStyle(fontSize: 20),),
-              Text("data", style: TextStyle(fontSize: 20),),
-              
-              ],
-            ),
-            Column(
-              children: [
-                Padding(padding: EdgeInsets.fromLTRB(120, 0, 0, 0)),
-                Text("MQ-135", style: TextStyle(fontSize: 20),),
-                Text("data", style: TextStyle(fontSize: 20),)
-              ],
-            )
-            ],)
-            
+                children: [
+                  Text(
+                    "Скорость передвижения",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Row(
+                    children: [
+                      ElevatedButton(
+                          onPressed: () {
+                            _sendMessage("text");
+                          },
+                          style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll<Color>(
+                                Colors.blueGrey),
+                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                          ),
+                          child: const Text(
+                            "x1",
+                            style: TextStyle(color: Colors.white),
+                          )), //кнопка скорости х1
+                      ElevatedButton(
+                          onPressed: () {
+                            _sendMessage("text");
+                          },
+                          style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll<Color>(
+                                Colors.blueGrey),
+                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                          ),
+                          child: const Text("x2",
+                              style: TextStyle(
+                                  color: Colors.white))), //кнопка скорости х2
+                      ElevatedButton(
+                          onPressed: () {
+                            _sendMessage("text");
+                          },
+                          style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll<Color>(
+                                Colors.blueGrey),
+                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                          ),
+                          child: const Text("x5",
+                              style: TextStyle(
+                                  color: Colors.white))), //кнопка скорости х5
+                    ],
+                  ),
+                  Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+                  Text(
+                    "Расстояние до объекта",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "расстояние",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      Text(
+                        " см",
+                        style: TextStyle(fontSize: 20),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(padding: EdgeInsets.fromLTRB(0, 100, 0, 0)),
+                      Column(
+                        children: [
+                          Padding(padding: EdgeInsets.fromLTRB(0, 0, 100, 0)),
+                          Text(
+                            "MQ-9",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Text(
+                            "data",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Padding(padding: EdgeInsets.fromLTRB(120, 0, 0, 0)),
+                          Text(
+                            "MQ-135",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Text(
+                            "data",
+                            style: TextStyle(fontSize: 20),
+                          )
+                        ],
+                      )
+                    ],
+                  )
+                ],
+              ),
+              Column(
+                
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                      ElevatedButton(
+                          onPressed: () {
+                            _sendMessage("text");
+                          },
+                          style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll<Color>(
+                                Colors.blueGrey),
+                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                          ),
+                          child: Text("Встать", style: TextStyle(color: Colors.white, fontSize: 13),)),//кнопка встать
+                      ElevatedButton(
+                          onPressed: () {
+                            _sendMessage("text");
+                          },
+                          style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll<Color>(
+                                Colors.blueGrey),
+                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                          ),
+                          child: Text("Сесть", style: TextStyle(color: Colors.white, fontSize: 13),))//кнопка сесть
 
-              
-            ],
-          ),  
-        
-         ]
-            
-        )
-           
-        ],
-      ))
-      
-      
-      
-    );
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                      ElevatedButton(
+                          onPressed: () {
+                            _sendMessage("text");
+                          },
+                          style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll<Color>(
+                                Colors.blueGrey),
+                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                          ),
+                          child: Text("Танец", style: TextStyle(color: Colors.white, fontSize: 13),)),//кнопка танец
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                      ElevatedButton(
+                          onPressed: () {
+                            _sendMessage("text");
+                          },
+                          style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll<Color>(
+                                Colors.blueGrey),
+                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                          ),
+                          child: Text("Шейк", style: TextStyle(color: Colors.white, fontSize: 13),)),//кнопка шейк
+                      ElevatedButton(
+                          onPressed: () {
+                            _sendMessage("text");
+                          },
+                          style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll<Color>(
+                                Colors.blueGrey),
+                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                          ),
+                          child: Text("Волна", style: TextStyle(color: Colors.white, fontSize: 13),))//кнопка волна
+
+                ],
+              ),
+            ])
+          ],
+        )));
   }
 
-void _onDataReceived(Uint8List data) {
+  void _onDataReceived(Uint8List data) {
     // Allocate buffer for parsed data
     int backspacesCounter = 0;
     data.forEach((byte) {
