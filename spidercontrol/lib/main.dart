@@ -265,71 +265,83 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
               Column(
-                
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                      ElevatedButton(
-                          onPressed: () {
-                            _sendMessage("text");
-                          },
-                          style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll<Color>(
-                                Colors.blueGrey),
-                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
-                          ),
-                          child: Text("Встать", style: TextStyle(color: Colors.white, fontSize: 13),)),//кнопка встать
-                      ElevatedButton(
-                          onPressed: () {
-                            _sendMessage("text");
-                          },
-                          style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll<Color>(
-                                Colors.blueGrey),
-                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
-                          ),
-                          child: Text("Сесть", style: TextStyle(color: Colors.white, fontSize: 13),))//кнопка сесть
-
+                  ElevatedButton(
+                      onPressed: () {
+                        _sendMessage("text");
+                      },
+                      style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll<Color>(Colors.blueGrey),
+                        minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                      ),
+                      child: Text(
+                        "Встать",
+                        style: TextStyle(color: Colors.white, fontSize: 13),
+                      )), //кнопка встать
+                  ElevatedButton(
+                      onPressed: () {
+                        _sendMessage("text");
+                      },
+                      style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll<Color>(Colors.blueGrey),
+                        minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                      ),
+                      child: Text(
+                        "Сесть",
+                        style: TextStyle(color: Colors.white, fontSize: 13),
+                      )) //кнопка сесть
                 ],
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                      ElevatedButton(
-                          onPressed: () {
-                            _sendMessage("text");
-                          },
-                          style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll<Color>(
-                                Colors.blueGrey),
-                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
-                          ),
-                          child: Text("Танец", style: TextStyle(color: Colors.white, fontSize: 13),)),//кнопка танец
+                  ElevatedButton(
+                      onPressed: () {
+                        _sendMessage("text");
+                      },
+                      style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll<Color>(Colors.blueGrey),
+                        minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                      ),
+                      child: Text(
+                        "Танец",
+                        style: TextStyle(color: Colors.white, fontSize: 13),
+                      )), //кнопка танец
                 ],
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                      ElevatedButton(
-                          onPressed: () {
-                            _sendMessage("text");
-                          },
-                          style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll<Color>(
-                                Colors.blueGrey),
-                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
-                          ),
-                          child: Text("Шейк", style: TextStyle(color: Colors.white, fontSize: 13),)),//кнопка шейк
-                      ElevatedButton(
-                          onPressed: () {
-                            _sendMessage("text");
-                          },
-                          style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll<Color>(
-                                Colors.blueGrey),
-                            minimumSize: MaterialStatePropertyAll(Size(30, 50)),
-                          ),
-                          child: Text("Волна", style: TextStyle(color: Colors.white, fontSize: 13),))//кнопка волна
-
+                  ElevatedButton(
+                      onPressed: () {
+                        _sendMessage("text");
+                      },
+                      style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll<Color>(Colors.blueGrey),
+                        minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                      ),
+                      child: Text(
+                        "Шейк",
+                        style: TextStyle(color: Colors.white, fontSize: 13),
+                      )), //кнопка шейк
+                  ElevatedButton(
+                      onPressed: () {
+                        _sendMessage("text");
+                      },
+                      style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll<Color>(Colors.blueGrey),
+                        minimumSize: MaterialStatePropertyAll(Size(30, 50)),
+                      ),
+                      child: Text(
+                        "Волна",
+                        style: TextStyle(color: Colors.white, fontSize: 13),
+                      )) //кнопка волна
                 ],
               ),
             ])
